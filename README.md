@@ -2,6 +2,11 @@
 
 This project currently consists of one application. It is designed with view, material UI components, single activity multiple fragment, legacy navigation strategy etc. in mind to demonstrate a proof of concept that it is possible to migrate from a legacy code base to modern android development practices.
 
+## Screenshots
+![](.documentation/screenshots/dashboard.png)
+![](.documentation/screenshots/profile.png)
+![](.documentation/screenshots/settings.png)
+
 ## Widgets and Components concept
 
 ### Widget Contract
