@@ -6,5 +6,5 @@ import com.example.composesdui.api.model.component.TileTextComponent
 
 @Composable
 fun TileTextComposable(component: TileTextComponent) {
-    Text(text = component.text)
+    Text(text = component.data.text)
 }
