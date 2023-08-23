@@ -36,8 +36,7 @@ class SDxRepository {
         )
         val widgetThree = ListWidget.mockWidget("List Widget")
         widgetThree.components = listOf(
-            TileImageComponent.mockComponent("https://fastly.picsum.photos/id/633/500/300.jpg?hmac=l8jCu3aaPMXm3PU6wwNOhf9fQMhZbimB9JTVz4Rq0tY"),
-            TileImageComponent.mockComponent("https://fastly.picsum.photos/id/236/500/300.jpg?hmac=fGvCeml4FIxcpy9Jty0B63GJJRiQuhROS3pFacIcveE")
+            TileImageComponent.mockComponent("https://picsum.photos/1920/500"),
         )
 
         return SDPage(
