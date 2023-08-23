@@ -30,9 +30,8 @@ class SDxRepository {
         )
         val widgetTwo = CarouselWidget.mockWidget("Carousel Widget")
         widgetTwo.components = listOf(
-            TileTextComponent.mockComponent("widget two component one"),
-            TileTextComponent.mockComponent("widget two component two"),
-            TileTextComponent.mockComponent("widget two component three")
+            TileBannerComponent.mockComponent("https://picsum.photos/1080/400"),
+            TileBannerComponent.mockComponent("https://picsum.photos/1080/400")
         )
         val widgetThree = ListWidget.mockWidget("List Widget")
         widgetThree.components = listOf(
