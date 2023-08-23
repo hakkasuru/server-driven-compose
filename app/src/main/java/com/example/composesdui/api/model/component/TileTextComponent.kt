@@ -1,8 +1,6 @@
 package com.example.composesdui.api.model.component
 
-data class TileTextComponent(
-    val data: Data
-) : BaseComponent() {
+data class TileTextComponent(val data: Data) : BaseComponent() {
     data class Data(
         val text: String = ""
     )
