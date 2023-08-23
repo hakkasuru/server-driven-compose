@@ -1,6 +1,7 @@
 package com.example.composesdui.api.repository
 
 import com.example.composesdui.api.model.SDPage
+import com.example.composesdui.api.model.component.TileBannerComponent
 import com.example.composesdui.api.model.component.TileImageComponent
 import com.example.composesdui.api.model.component.TileTextComponent
 import com.example.composesdui.api.model.widget.CarouselWidget
@@ -24,9 +25,9 @@ class SDxRepository {
     private fun getDashboard(): SDPage {
         val widgetOne = ListWidget.mockWidget("List Widget")
         widgetOne.components = listOf(
-            TileTextComponent.mockComponent("widget one component one"),
-            TileTextComponent.mockComponent("widget one component two"),
-            TileTextComponent.mockComponent("widget one component three")
+            TileTextComponent.mockComponent(subtitle = "widget one component one"),
+            TileTextComponent.mockComponent(subtitle = "widget one component two"),
+            TileTextComponent.mockComponent(subtitle = "widget one component three")
         )
         val widgetTwo = CarouselWidget.mockWidget("Carousel Widget")
         widgetTwo.components = listOf(
