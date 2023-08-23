@@ -52,7 +52,8 @@ Component basic structure
 {
   "type": "tile-text",
   "data": {
-    "text": "hello, world"
+    "title": "hello, world",
+     "subtitle": "hello, world"
   },
   "action": null
 }
