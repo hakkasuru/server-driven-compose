@@ -63,7 +63,8 @@ Component basic structure
 
  - [ ] add more example widgets/components
    - [X] add carousel widget
-   - [ ] add tile image component
+   - [X] add tile image component
+   - [X] add tile banner component
  - [ ] deeplink navigation for legacy app
  - [ ] handle server driven actions
  - [ ] second fragment host on top of main activity in legacy app
