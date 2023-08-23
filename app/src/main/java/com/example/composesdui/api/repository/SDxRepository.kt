@@ -1,6 +1,7 @@
 package com.example.composesdui.api.repository
 
 import com.example.composesdui.api.model.SDPage
+import com.example.composesdui.api.model.component.TileImageComponent
 import com.example.composesdui.api.model.component.TileTextComponent
 import com.example.composesdui.api.model.widget.CarouselWidget
 import com.example.composesdui.api.model.widget.ListWidget
@@ -33,12 +34,15 @@ class SDxRepository {
             TileTextComponent.mockComponent("widget two component two"),
             TileTextComponent.mockComponent("widget two component three")
         )
-
-
+        val widgetThree = ListWidget.mockWidget("List Widget")
+        widgetThree.components = listOf(
+            TileImageComponent.mockComponent("https://fastly.picsum.photos/id/633/500/300.jpg?hmac=l8jCu3aaPMXm3PU6wwNOhf9fQMhZbimB9JTVz4Rq0tY"),
+            TileImageComponent.mockComponent("https://fastly.picsum.photos/id/236/500/300.jpg?hmac=fGvCeml4FIxcpy9Jty0B63GJJRiQuhROS3pFacIcveE")
+        )
 
         return SDPage(
             id = "dashboard",
-            widgets = listOf(widgetOne, widgetTwo)
+            widgets = listOf(widgetOne, widgetTwo, widgetThree)
         )
     }
 
