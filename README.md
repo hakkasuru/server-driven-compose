@@ -17,6 +17,7 @@ Widget basic structure
 ```json
 {
   "type": "<string:non-nullable>",
+  "header": "<object:nullable>",
   "components": "<array|slice:non-nullable>",
   "tag": "<object:nullable>"
 }
@@ -60,6 +61,8 @@ Component basic structure
 ## TODO
 
  - [ ] add more example widgets/components
+   - [X] add carousel widget
+   - [ ] add tile image component
  - [ ] deeplink navigation for legacy app
  - [ ] handle server driven actions
  - [ ] second fragment host on top of main activity in legacy app
