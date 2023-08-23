@@ -2,6 +2,7 @@ package com.example.composesdui.api.repository
 
 import com.example.composesdui.api.model.SDPage
 import com.example.composesdui.api.model.component.TileTextComponent
+import com.example.composesdui.api.model.widget.CarouselWidget
 import com.example.composesdui.api.model.widget.ListWidget
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -20,18 +21,20 @@ class SDxRepository {
     }
 
     private fun getDashboard(): SDPage {
-        val widgetOne = ListWidget.mockWidget("Widget One")
+        val widgetOne = ListWidget.mockWidget("List Widget")
         widgetOne.components = listOf(
             TileTextComponent.mockComponent("widget one component one"),
             TileTextComponent.mockComponent("widget one component two"),
             TileTextComponent.mockComponent("widget one component three")
         )
-        val widgetTwo = ListWidget.mockWidget("Widget Two")
+        val widgetTwo = CarouselWidget.mockWidget("Carousel Widget")
         widgetTwo.components = listOf(
             TileTextComponent.mockComponent("widget two component one"),
             TileTextComponent.mockComponent("widget two component two"),
             TileTextComponent.mockComponent("widget two component three")
         )
+
+
 
         return SDPage(
             id = "dashboard",
