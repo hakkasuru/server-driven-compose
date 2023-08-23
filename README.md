@@ -61,5 +61,6 @@ Component basic structure
 
  - [ ] add more example widgets/components
  - [ ] deeplink navigation for legacy app
+ - [ ] handle server driven actions
  - [ ] second fragment host on top of main activity in legacy app
  - [ ] add new app designed with modern android development practices with server driven concept
