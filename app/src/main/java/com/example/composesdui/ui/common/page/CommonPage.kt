@@ -15,6 +15,7 @@ fun CommonPage(
     vm: CommonViewModel = koinViewModel()
 ) {
     val uiState = vm.uiState.observeAsState(CommonViewModel.State.Idle).value
+
     Crossfade(targetState = uiState, label = "dashboard crossfade") { state ->
         when (state) {
             is CommonViewModel.State.Idle -> { Text(text = "idle") }
@@ -24,7 +25,7 @@ fun CommonPage(
         }
     }
 
-    SideEffect {
+    LaunchedEffect(true) {
         vm.submitAction(CommonViewModel.Action.FetchPage(page))
     }
 }
