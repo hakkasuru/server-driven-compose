@@ -67,5 +67,7 @@ Component basic structure
    - [X] add tile banner component
  - [ ] deeplink navigation for legacy app
  - [ ] handle server driven actions
- - [ ] second fragment host on top of main activity in legacy app
+ - [X] second fragment host on top of main activity in legacy app
  - [ ] add new app designed with modern android development practices with server driven concept
+ - [X] handle action & navigation with delegates
+ - [ ] implement legacy back press behaviour
