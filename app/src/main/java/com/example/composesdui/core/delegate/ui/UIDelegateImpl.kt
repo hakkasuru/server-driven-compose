@@ -1,6 +1,5 @@
 package com.example.composesdui.core.delegate.ui
 
-import android.util.Log
 import com.example.composesdui.api.model.action.Action
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

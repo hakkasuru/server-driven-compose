@@ -1,6 +1,5 @@
 package com.example.composesdui.dashboard
 
-import android.util.Log
 import androidx.compose.animation.Crossfade
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
