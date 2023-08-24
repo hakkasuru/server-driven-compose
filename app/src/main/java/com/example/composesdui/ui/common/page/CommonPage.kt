@@ -4,6 +4,7 @@ import androidx.compose.animation.Crossfade
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.livedata.observeAsState
 import com.example.composesdui.ui.common.CommonPageComposable
 import org.koin.androidx.compose.koinViewModel
@@ -19,10 +20,11 @@ fun CommonPage(
             is CommonViewModel.State.Idle -> { Text(text = "idle") }
             is CommonViewModel.State.Loading -> { Text(text = "loading") }
             is CommonViewModel.State.Error -> { Text(text = "error") }
-            is CommonViewModel.State.Content -> { CommonPageComposable(state.page) }
+            is CommonViewModel.State.Content -> { CommonPageComposable(state.page, vm) }
         }
     }
-    LaunchedEffect(true) {
+
+    SideEffect {
         vm.submitAction(CommonViewModel.Action.FetchPage(page))
     }
 }
