@@ -8,9 +8,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
 import androidx.fragment.app.Fragment
+import com.example.composesdui.core.delegate.action.ActionDelegate
 import org.koin.android.ext.android.inject
 
 class CommonPageFragment : Fragment() {
+
 
     companion object {
         const val pageArg = "x-page"
@@ -21,9 +23,13 @@ class CommonPageFragment : Fragment() {
                 putString(pageArg, page)
             }
         }
-    }
 
-    private val vm: CommonViewModel by inject()
+        fun newInstance(
+            bundle: Bundle? = null
+        ) = CommonPageFragment().apply {
+            arguments = bundle
+        }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

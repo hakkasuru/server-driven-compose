@@ -1,0 +1,16 @@
+package com.example.composesdui.core.delegate.ui
+
+import com.example.composesdui.api.model.action.Action
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.asStateFlow
+
+class UIDelegateNoop : UIDelegate {
+    override val _actionFlow: MutableStateFlow<Action?> = MutableStateFlow(null)
+    override val actionFlow: StateFlow<Action?>
+        get() = _actionFlow.asStateFlow()
+
+    override suspend fun onClick(action: Action) {
+        // no-op
+    }
+}

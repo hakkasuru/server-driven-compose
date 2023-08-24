@@ -1,6 +1,8 @@
 package com.example.composesdui.api.repository
 
 import com.example.composesdui.api.model.SDPage
+import com.example.composesdui.api.model.action.Action
+import com.example.composesdui.api.model.action.NavActionData
 import com.example.composesdui.api.model.component.TileBannerComponent
 import com.example.composesdui.api.model.component.TileImageComponent
 import com.example.composesdui.api.model.component.TileTextComponent
@@ -31,7 +33,16 @@ class SDxRepository {
         )
         val widgetTwo = CarouselWidget.mockWidget("Carousel Widget")
         widgetTwo.components = listOf(
-            TileBannerComponent.mockComponent("https://picsum.photos/1080/400"),
+            TileBannerComponent
+                .mockComponent("https://picsum.photos/1080/400")
+                .apply {
+                    action = Action(
+                        type = "nav",
+                        Action.Data(
+                            nav = NavActionData(pageID = "profile")
+                        )
+                    )
+               },
             TileBannerComponent.mockComponent("https://picsum.photos/1080/400")
         )
         val widgetThree = ListWidget.mockWidget("List Widget")

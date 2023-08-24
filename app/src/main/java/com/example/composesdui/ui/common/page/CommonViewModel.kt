@@ -6,13 +6,15 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.composesdui.api.model.SDPage
 import com.example.composesdui.api.repository.SDxRepository
+import com.example.composesdui.core.delegate.ui.UIDelegate
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
 class CommonViewModel(
-    private val repo: SDxRepository
-) : ViewModel() {
+    private val repo: SDxRepository,
+    private val uiDelegate: UIDelegate
+) : ViewModel(), UIDelegate by uiDelegate {
 
     sealed class State {
         object Idle : State()

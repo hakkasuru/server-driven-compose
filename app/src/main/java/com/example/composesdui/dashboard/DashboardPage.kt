@@ -16,7 +16,7 @@ fun DashboardPage(vm: DashboardViewModel = koinViewModel()) {
             is DashboardViewModel.State.Idle -> { Text(text = "idle") }
             is DashboardViewModel.State.Loading -> { Text(text = "loading") }
             is DashboardViewModel.State.Error -> { Text(text = "error") }
-            is DashboardViewModel.State.Content -> { CommonPageComposable(state.page) }
+            is DashboardViewModel.State.Content -> { CommonPageComposable(state.page, vm) }
         }
     }
     LaunchedEffect(true) {
