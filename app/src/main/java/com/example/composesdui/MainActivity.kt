@@ -32,7 +32,8 @@ class MainActivity : AppCompatActivity(), NavigationDelegate, ActionDelegate {
                     val fragment = DashboardFragment.newInstance()
                     val transaction = supportFragmentManager.beginTransaction()
                     transaction.replace(R.id.fragmentContainer, fragment)
-                    transaction.commit()
+                        .addToBackStack(DashboardFragment.TAG)
+                        .commit()
                     true
                 }
                 R.id.profile -> {
@@ -56,13 +57,15 @@ class MainActivity : AppCompatActivity(), NavigationDelegate, ActionDelegate {
         val fragment = CommonPageFragment.newInstance(page)
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentContainer, fragment)
-        transaction.commit()
+            .addToBackStack(CommonPageFragment.TAG)
+            .commit()
     }
 
     private fun handleOverlayFragment(fragment: Fragment, tag: String) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.add(R.id.fragmentOverlay, fragment, tag)
-        transaction.commit()
+            .addToBackStack(tag)
+            .commit()
     }
 
     override fun openPageItem(pageID: Int, bundle: Bundle?) {

@@ -4,6 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.window.OnBackInvokedDispatcher
+import androidx.activity.OnBackPressedCallback
+import androidx.activity.OnBackPressedDispatcher
 import androidx.compose.material3.Surface
 import androidx.compose.ui.platform.ComposeView
 import androidx.compose.ui.platform.ViewCompositionStrategy
@@ -15,6 +18,7 @@ class CommonPageFragment : Fragment() {
 
 
     companion object {
+        const val TAG = "CommonPageFragment"
         const val pageArg = "x-page"
         fun newInstance(
             page: String

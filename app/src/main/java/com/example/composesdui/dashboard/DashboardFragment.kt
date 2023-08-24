@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 class DashboardFragment : Fragment() {
 
     companion object {
+        const val TAG = "DashboardFragment"
         fun newInstance() = DashboardFragment()
     }
 
