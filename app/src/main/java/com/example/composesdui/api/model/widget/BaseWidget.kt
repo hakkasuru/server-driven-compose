@@ -9,7 +9,8 @@ abstract class BaseWidget {
     var tag: Tag? = null
 
     data class Header(
-        val title: String = ""
+        val title: String = "",
+        val components: List<BaseComponent> = emptyList()
     )
 
     data class Tag(
