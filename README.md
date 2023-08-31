@@ -61,7 +61,7 @@ Component basic structure
 
 ## TODO
 
- - [ ] add more example widgets/components
+ - [X] add more example widgets/components
    - [X] add carousel widget
    - [X] add tile image component
    - [X] add tile banner component
