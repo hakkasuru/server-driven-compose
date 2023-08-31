@@ -54,12 +54,12 @@ class SDxRepository {
         )
         val widgetFour = GridMaxTwoExpandable.mockWidget(headerComponents = listOf(SectionExpander.mockComponent()))
         widgetFour.components = listOf(
-            TileCard.mockComponent(),
-            TileCard.mockComponent(),
-            TileCard.mockComponent(),
-            TileCard.mockComponent(),
-            TileCard.mockComponent(),
-            TileCard.mockComponent()
+            TileCard.mockComponent(imageURL = "https://picsum.photos/seed/oneaa/45/90"),
+            TileCard.mockComponent(imageURL = "https://picsum.photos/seed/twoa/45/90"),
+            TileCard.mockComponent(imageURL = "https://picsum.photos/seed/threea/45/90"),
+            TileCard.mockComponent(imageURL = "https://picsum.photos/seed/foura/45/90"),
+            TileCard.mockComponent(imageURL = "https://picsum.photos/seed/fivea/45/90"),
+            TileCard.mockComponent(imageURL = "https://picsum.photos/seed/sixa/45/90")
         )
 
         return SDPage(

@@ -1,5 +1,6 @@
 package com.example.composesdui.ui.sdengine.component
 
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -13,6 +14,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -45,6 +47,7 @@ fun TileCardComposable(component: TileCard, uiDelegate: UIDelegate) {
             GlideImage(
                 modifier = Modifier.fillMaxHeight(1f).fillMaxWidth(0.3f),
                 model = component.data.imageURL,
+                contentScale = ContentScale.FillBounds,
                 contentDescription = null
             )
             Column(modifier = Modifier.fillMaxWidth(0.7f).padding(2.dp)) {
