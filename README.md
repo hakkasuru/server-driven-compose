@@ -5,6 +5,7 @@ This project currently consists of one application. It is designed with view, ma
 Second application will be added in future to demonstrate server driven compose with modern android development practices.
 
 ## Screenshots
+![](.documentation/screenshots/dashboard_recording.gif)
 ![](.documentation/screenshots/dashboard.png)
 ![](.documentation/screenshots/profile.png)
 ![](.documentation/screenshots/settings.png)
