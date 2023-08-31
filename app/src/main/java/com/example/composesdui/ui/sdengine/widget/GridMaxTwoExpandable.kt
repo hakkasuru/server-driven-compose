@@ -18,28 +18,36 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.composesdui.api.model.component.BaseComponent
 import com.example.composesdui.api.model.widget.GridMaxTwoExpandable
 import com.example.composesdui.core.delegate.ui.UIDelegate
+import com.example.composesdui.ui.common.VerticalGrid
 import com.example.composesdui.ui.sdengine.ComponentEngine
 import com.example.composesdui.ui.theme.Typography
 
 @Composable
 fun GridMaxTwoExpandableComposable(widget: GridMaxTwoExpandable, uiDelegate: UIDelegate) {
     Column(modifier = Modifier.padding(8.dp)) {
-        Row {
+        val expand = remember { mutableStateOf(true) }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            val expandableComponent = widget.header?.components?.first()
             Text(
-                modifier = Modifier.fillMaxWidth(0.5f),
+                modifier = Modifier.fillMaxWidth(expandableComponent?.let { 0.5f } ?: 1f),
                 text = widget.header?.title ?: "",
                 style = Typography.titleLarge
             )
-            Box(modifier = Modifier.fillMaxWidth(1f), contentAlignment = Alignment.CenterEnd) {
-                widget.header?.components?.first()?.let { ComponentEngine(it, uiDelegate) }
+            expandableComponent?.let {
+                Box(
+                    modifier = Modifier.fillMaxWidth(1f),
+                    contentAlignment = Alignment.CenterEnd
+                ) {
+                    ComponentEngine(it, uiDelegate, expand)
+                }
             }
         }
         Spacer(modifier = Modifier.padding(1.dp))
-        val expand = remember { mutableStateOf(true) }
         if (expand.value) {
             Content(widget.components, uiDelegate)
         } else {
@@ -53,8 +61,8 @@ private fun Content(components: List<BaseComponent>, uiDelegate: UIDelegate) {
     Card(
         colors = CardDefaults.cardColors(containerColor = Color.Gray)
     ) {
-        LazyVerticalGrid(columns = GridCells.Fixed(2)) {
-            items(components) { component ->
+        VerticalGrid(columns = 2) {
+            components.forEach { component ->
                 ComponentEngine(component, uiDelegate)
             }
         }

@@ -1,6 +1,6 @@
 package com.example.composesdui.api.model.component
 
-data class TileManage(val data: Data) : BaseComponent() {
+data class TileCard(val data: Data) : BaseComponent() {
     data class Data(
         val title: String = "",
         val description: String = "",
@@ -9,11 +9,11 @@ data class TileManage(val data: Data) : BaseComponent() {
 
     companion object {
         fun mockComponent(
-            title: String = "",
-            description: String = "",
-            imageURL: String = ""
-        ): TileManage {
-            val comp = TileManage(Data(
+            title: String = "Title",
+            description: String = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet",
+            imageURL: String = "https://picsum.photos/seed/one/45/90"
+        ): TileCard {
+            val comp = TileCard(Data(
                 title = title,
                 description = description,
                 imageURL = imageURL

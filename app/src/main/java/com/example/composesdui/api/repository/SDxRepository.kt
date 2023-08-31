@@ -3,10 +3,13 @@ package com.example.composesdui.api.repository
 import com.example.composesdui.api.model.SDPage
 import com.example.composesdui.api.model.action.Action
 import com.example.composesdui.api.model.action.NavActionData
+import com.example.composesdui.api.model.component.SectionExpander
 import com.example.composesdui.api.model.component.TileBannerComponent
+import com.example.composesdui.api.model.component.TileCard
 import com.example.composesdui.api.model.component.TileImageComponent
 import com.example.composesdui.api.model.component.TileTextComponent
 import com.example.composesdui.api.model.widget.CarouselWidget
+import com.example.composesdui.api.model.widget.GridMaxTwoExpandable
 import com.example.composesdui.api.model.widget.ListWidget
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -49,10 +52,19 @@ class SDxRepository {
         widgetThree.components = listOf(
             TileImageComponent.mockComponent("https://picsum.photos/1920/500"),
         )
+        val widgetFour = GridMaxTwoExpandable.mockWidget(headerComponents = listOf(SectionExpander.mockComponent()))
+        widgetFour.components = listOf(
+            TileCard.mockComponent(),
+            TileCard.mockComponent(),
+            TileCard.mockComponent(),
+            TileCard.mockComponent(),
+            TileCard.mockComponent(),
+            TileCard.mockComponent()
+        )
 
         return SDPage(
             id = "dashboard",
-            widgets = listOf(widgetOne, widgetTwo, widgetThree)
+            widgets = listOf(widgetOne, widgetTwo, widgetThree, widgetFour)
         )
     }
 
